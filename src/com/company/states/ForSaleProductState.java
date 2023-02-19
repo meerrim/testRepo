@@ -1,5 +1,6 @@
 package com.company.states;
 
+import com.company.CodeGenerator;
 import com.company.Product;
 import com.company.State;
 import com.company.strategy.Bronze;
@@ -26,7 +27,7 @@ public class ForSaleProductState extends ProductState{
         if (product.getPrice() == 0) {
             throw new Exception("нельзя отдать товар бесплатно");
         } else {
-//            CodeGenerator codeGenerator = new CodeGenerator();
+            CodeGenerator codeGenerator = new CodeGenerator();
             product.setState(State.sold);
             product.setStateClass(new SoldProductState());
 
